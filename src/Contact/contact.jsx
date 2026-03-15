@@ -66,17 +66,34 @@ const Contact = () => {
           <div className="contact-info-content">
             <div className="line">
               <MdEmail className="icon" />
-              <h2><b>Email:</b> gurleen.gur887@gmail.com</h2>
+             <h2>
+  <b>Email:</b>{" "}
+  <a href="mailto:gurleen.gur887@gmail.com">
+    gurleen.gur887@gmail.com
+  </a>
+</h2>
             </div>
 
             <div className="line">
               <FaPhoneAlt className="icon" />
-              <h2><b>Phone:</b> +91 8699157502</h2>
+             <h2>
+  <b>Phone:</b>{" "}
+  <a href="tel:+918699157502">+91 8699157502</a>
+</h2>
             </div>
 
             <div className="line">
               <MdLocationOn className="icon" />
-              <h2><b>Location:</b> Ludhiana, Punjab, India</h2>
+             <h2>
+  <b>Location:</b>{" "}
+  <a
+    href="https://www.google.com/maps?q=Ludhiana,Punjab,India"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    Ludhiana, Punjab, India
+  </a>
+</h2>
             </div>
           </div>
 
