@@ -6,7 +6,10 @@ const app = express();
 
 // Middleware
 app.use(cors({
-  origin: "http://localhost:3000", // React frontend
+  origin: [
+    "http://localhost:3000",
+    "https://portfolio-nine-sigma-r8py0lf8p.vercel.app"
+  ],
   methods: ["GET", "POST"]
 }));
 app.use(express.json());
@@ -38,7 +41,8 @@ app.post("/contact", (req, res) => {
 });
 
 // Server
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
+
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
