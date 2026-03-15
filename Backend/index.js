@@ -1,13 +1,10 @@
-// backend/index.js
 const express = require("express");
 const cors = require("cors");
 
 const app = express();
 
 // Middleware
-app.use(cors({
-  
-}));
+app.use(cors());   // allow requests from anywhere
 app.use(express.json());
 
 // Test route
@@ -23,17 +20,22 @@ app.post("/contact", (req, res) => {
   const { name, number, email, message } = req.body;
 
   if (!name || !number || !email || !message) {
-    return res.status(400).json({ success: false, message: "All fields are required!" });
+    return res.status(400).json({
+      success: false,
+      message: "All fields are required!"
+    });
   }
 
-  // For now, just log data
   console.log("📩 Contact Form Data:");
   console.log("Name:", name);
   console.log("Number:", number);
   console.log("Email:", email);
   console.log("Message:", message);
 
-  res.status(200).json({ success: true, message: "Message received successfully!" });
+  res.status(200).json({
+    success: true,
+    message: "Message received successfully!"
+  });
 });
 
 // Server
