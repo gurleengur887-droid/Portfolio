@@ -6,11 +6,7 @@ const app = express();
 
 // Middleware
 app.use(cors({
-  origin: [
-    "http://localhost:3000",
-    "https://portfolio-nine-sigma-r8py0lf8p.vercel.app"
-  ],
-  methods: ["GET", "POST"]
+  
 }));
 app.use(express.json());
 
