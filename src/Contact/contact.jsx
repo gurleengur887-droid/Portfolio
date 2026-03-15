@@ -28,10 +28,8 @@ const Contact = () => {
     e.preventDefault();
 
     try {
-      const res = await axios.post(
-        "http://localhost:5000/contact",
-        formData
-      );
+      const res = await axios.post("https://portfolio-backend-osor.onrender.com/contact", formData)
+      ;
 
       setStatus(res.data.message);
 
