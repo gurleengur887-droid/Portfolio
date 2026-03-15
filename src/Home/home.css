@@ -1,0 +1,96 @@
+/* MAIN WRAPPER */
+.home-main {
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #f3e8ff 0%, #e8d9ff 35%, #4c1d3f 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 20px;
+    font-family: "Poppins", sans-serif;
+    animation: fadeInPage 1.2s ease-in-out;
+}
+
+
+/* REMOVE GLASS EFFECT — CLEAN LOOK */
+.home-head, .home-para, .home-icons {
+    background: none !important;
+    box-shadow: none !important;
+    backdrop-filter: none !important;
+    padding: 0;
+    margin-bottom: 30px;
+    width: 90%;
+    max-width: 900px;
+}
+
+/* HEADINGS */
+.home-head h1 {
+    font-size: 4rem;
+    text-align: center;
+    font-weight: 700;
+    background: linear-gradient(90deg, #3a0d2e, #7d3c98);
+    -webkit-background-clip: text;
+    color: transparent;
+    letter-spacing: 1.5px;
+    margin-bottom: 10px;
+}
+
+.home-head h3 {
+    font-size: 1.6rem;
+    color: #2e0f27;
+    text-align: center;
+    font-weight: 500;
+    margin-top: 5px;
+}
+
+/* PARAGRAPH */
+.home-para p {
+    font-size: 1.18rem;
+    color: #2e2e2e;
+    line-height: 1.9rem;
+    text-align: center;
+    width: 85%;
+    margin: 0 auto;
+}
+
+/* ICON SECTION */
+.home-icons {
+    display: flex;
+    gap: 28px;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ICON STYLE — KEEP PREMIUM HOVER */
+.home-icons svg {
+    font-size: 2.2rem;
+    color: #4c1d3f;
+    background: rgba(255, 255, 255, 0.55);
+    padding: 18px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.35s ease;
+    backdrop-filter: blur(6px);
+    box-shadow: 0 6px 18px rgba(65, 2, 55, 0.25);
+}
+
+/* ICON HOVER */
+.home-icons svg:hover {
+    background: #4c1d3f;
+    color: white;
+    transform: translateY(-8px) scale(1.1);
+    box-shadow: 0 12px 25px rgba(76, 29, 63, 0.45);
+}
+
+/* PAGE FADE-IN ANIMATION */
+@keyframes fadeInPage {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

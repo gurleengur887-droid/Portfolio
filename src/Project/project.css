@@ -1,0 +1,167 @@
+/* -----------------------
+   MAIN PROJECT SECTION
+------------------------ */
+.project-main {
+    padding: 60px 0;
+    min-height: 100vh;
+    font-family: 'Poppins', sans-serif;
+   background: linear-gradient(135deg, #f3e8ff 0%, #e8d9ff 35%, #4c1d3f 100%);
+    color: #4A235A;
+    text-align: center;
+}
+
+/* -----------------------
+   HEADING
+------------------------ */
+.project-head {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 45px;
+}
+
+.project-head h1 {
+    font-size: 48px;
+    font-weight: 700;
+    color: #4A235A;
+}
+
+/* Globe Icon */
+.globe {
+    font-size: 55px;
+    color: #4A235A;
+    transition: 0.35s ease;
+}
+
+.globe:hover {
+    transform: scale(1.2) rotate(10deg);
+    color: #5C2E76;
+    filter: drop-shadow(0 0 10px rgba(92,46,118,0.6));
+}
+
+/* -----------------------
+   PROJECT CONTENT GRID
+------------------------ */
+.project-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+    gap: 35px;
+    width: 85%;
+    margin: auto;
+}
+
+/* -----------------------
+   PROJECT BOXES
+------------------------ */
+.project-container {
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(12px);
+    border-radius: 20px;
+    padding: 30px;
+    text-align: left;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    transition: 0.35s ease;
+    position: relative;
+    cursor: default;
+}
+
+/* Hover animation */
+.project-container:hover {
+    transform: translateY(-10px);
+    background: rgba(255, 255, 255, 0.35);
+    border-color: rgba(255, 255, 255, 0.7);
+    box-shadow: 0 0 18px rgba(92, 46, 118, 0.5);
+}
+
+/* Glow border effect on hover */
+.project-container::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 20px;
+    padding: 2px;
+    background: linear-gradient(145deg, #C6A4D6, #8B56B6, #4A235A);
+    -webkit-mask: 
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: 0.35s ease;
+}
+
+.project-container:hover::after {
+    opacity: 1;
+}
+
+/* -----------------------
+   TEXT STYLING
+------------------------ */
+.project-container h2 {
+    font-size: 26px;
+    margin-bottom: 10px;
+    color: #4A235A;
+}
+
+.project-container p {
+    font-size: 16px;
+    margin-bottom: 15px;
+    line-height: 1.7;
+    color: #4A235A;
+}
+
+.project-container ul {
+    padding-left: 18px;
+    color: #4A235A;
+}
+
+.project-container li {
+    margin-bottom: 8px;
+    font-size: 15px;
+}
+/* -----------------------
+   GITHUB BUTTON (NEW)
+------------------------ */
+.project-github-btn {
+    margin-top: 18px;
+    padding: 10px 18px;
+    background: linear-gradient(135deg, #4A235A, #8B56B6);
+    color: #ffffff;
+    border: none;
+    border-radius: 25px;
+    font-size: 14px;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.project-github-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 12px rgba(139, 86, 182, 0.6);
+    background: linear-gradient(135deg, #5C2E76, #A678D6);
+}
+.project-container::after {
+    pointer-events: none;
+}
+/* Center GitHub button inside project card */
+.project-github-btn {
+    margin: 22px auto 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* Make project cards equal-height layout */
+.project-container {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Push GitHub button to the bottom */
+.project-github-btn {
+    margin-top: auto;
+    align-self: center;
+}
