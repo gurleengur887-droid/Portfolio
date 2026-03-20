@@ -1,8 +1,4 @@
- app.get("/", (req, res) => {
-  res.send("Backend is running 🚀");
-});
- 
- const express = require("express");
+const express = require("express");
 const cors = require("cors");
 const nodemailer = require("nodemailer");
 
@@ -11,18 +7,22 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+// ✅ ROOT ROUTE (PUT HERE)
+app.get("/", (req, res) => {
+  res.send("Backend is running 🚀");
+});
+
 // Email transporter
 const transporter = nodemailer.createTransport({
   service: "gmail",
   auth: {
     user: "gurleen.gur887@gmail.com",
-    pass: "rtui yqbm kyvd zqxx"
+    pass: "rtui yqbm kyvd zqxx" // put new one here
   }
 });
 
 // Contact form API
 app.post("/contact", async (req, res) => {
-
   const { name, number, email, message } = req.body;
 
   if (!name || !number || !email || !message) {
@@ -30,8 +30,9 @@ app.post("/contact", async (req, res) => {
   }
 
   const mailOptions = {
-    from: email,
+    from: "gurleen.gur887@gmail.com", // ✅ FIXED
     to: "gurleen.gur887@gmail.com",
+    replyTo: email,
     subject: `New Portfolio Message from ${name}`,
     text: `
 Name: ${name}
@@ -56,7 +57,6 @@ ${message}
       message: "Email failed to send"
     });
   }
-
 });
 
 const PORT = process.env.PORT || 5000;
