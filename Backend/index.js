@@ -14,13 +14,17 @@ app.get("/", (req, res) => {
 
 // Email transporter
 const transporter = nodemailer.createTransport({
-  service: "gmail",
+  host: "smtp.gmail.com",
+  port: 587,
+  secure: false, // IMPORTANT
   auth: {
     user: "gurleen.gur887@gmail.com",
-    pass: "rtui yqbm kyvd zqxx" // put new one here
+    pass: "rtui yqbm kyvd zqxx"
+  },
+  tls: {
+    rejectUnauthorized: false
   }
 });
-
 // Contact form API
 app.post("/contact", async (req, res) => {
   const { name, number, email, message } = req.body;
