@@ -1,44 +1,60 @@
 const express = require("express");
 const cors = require("cors");
+const nodemailer = require("nodemailer");
 
 const app = express();
 
-// Middleware
-app.use(cors());   // allow requests from anywhere
+app.use(cors());
 app.use(express.json());
 
-// Test route
-app.get("/", (req, res) => {
-  res.send("Backend is running 🚀");
+// Email transporter
+const transporter = nodemailer.createTransport({
+  service: "gmail",
+  auth: {
+    user: "gurleen.gur887@gmail.com",
+    pass: "rvaq lczk nuyt nefq"
+  }
 });
 
 // Contact form API
-app.post("/contact", (req, res) => {
-  console.log("POST /contact called");
-  console.log("Received data:", req.body);
+app.post("/contact", async (req, res) => {
 
   const { name, number, email, message } = req.body;
 
   if (!name || !number || !email || !message) {
-    return res.status(400).json({
-      success: false,
-      message: "All fields are required!"
+    return res.status(400).json({ message: "All fields required" });
+  }
+
+  const mailOptions = {
+    from: email,
+    to: "gurleen.gur887@gmail.com",
+    subject: `New Portfolio Message from ${name}`,
+    text: `
+Name: ${name}
+Phone: ${number}
+Email: ${email}
+
+Message:
+${message}
+`
+  };
+
+  try {
+    await transporter.sendMail(mailOptions);
+
+    res.status(200).json({
+      message: "Message sent successfully!"
+    });
+
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({
+      message: "Email failed to send"
     });
   }
 
-  console.log("📩 Contact Form Data:");
-  console.log("Name:", name);
-  console.log("Number:", number);
-  console.log("Email:", email);
-  console.log("Message:", message);
-
-  res.status(200).json({
-    success: true,
-    message: "Message received successfully!"
-  });
 });
 
-// Server
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => {
