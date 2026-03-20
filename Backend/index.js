@@ -1,4 +1,8 @@
-const express = require("express");
+ app.get("/", (req, res) => {
+  res.send("Backend is running 🚀");
+});
+ 
+ const express = require("express");
 const cors = require("cors");
 const nodemailer = require("nodemailer");
 
@@ -12,7 +16,7 @@ const transporter = nodemailer.createTransport({
   service: "gmail",
   auth: {
     user: "gurleen.gur887@gmail.com",
-    pass: "rvaq lczk nuyt nefq"
+    pass: "rtui yqbm kyvd zqxx"
   }
 });
 
