@@ -268,3 +268,98 @@
         font-size: 16px;
     }
 }
+
+
+/* -----------------------
+   TABLET (≤ 900px)
+------------------------ */
+@media (max-width: 900px) {
+
+    .contact-main {
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+    }
+
+    .contact-info,
+    .contact-form {
+        width: 90%;
+    }
+
+    .contact-head h1 {
+        font-size: 38px;
+    }
+
+    .contact-info-head h1 {
+        font-size: 22px;
+    }
+
+    .contact-form-head h1 {
+        font-size: 24px;
+    }
+}
+
+/* -----------------------
+   MOBILE (≤ 600px)
+------------------------ */
+@media (max-width: 600px) {
+
+    .contact-wrapper {
+        padding: 40px 0;
+    }
+
+    .contact-head h1 {
+        font-size: 30px;
+    }
+
+    .contact-info,
+    .contact-form {
+        width: 92%;
+        padding: 20px;
+    }
+
+    .line {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+    }
+
+    .line h2 {
+        font-size: 15px;
+    }
+
+    .icon {
+        font-size: 22px;
+    }
+
+    .contact-info-btn {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .contact-info-btn svg {
+        font-size: 24px;
+        padding: 10px;
+    }
+
+    .Contact-line label {
+        font-size: 15px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        font-size: 14px;
+    }
+
+    .contact-form input[type="submit"] {
+        padding: 8px 25px;
+        font-size: 14px;
+    }
+
+    /* Remove forced height */
+    .contact-info,
+    .contact-form {
+        min-height: auto;
+    }
+}

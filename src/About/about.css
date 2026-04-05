@@ -173,3 +173,101 @@
     height: 100%;
     background: linear-gradient(to right, #A678C9, #4A235A);
 }
+
+/* -----------------------
+   TABLET (≤ 900px)
+------------------------ */
+@media (max-width: 900px) {
+
+    .about-head h1 {
+        font-size: 38px;
+    }
+
+    .about-content p {
+        width: 85%;
+        font-size: 16px;
+    }
+
+    .skill-head h1 {
+        font-size: 32px;
+    }
+
+    .skill-head .tool-icon {
+        font-size: 36px;
+    }
+
+    .skill-grid {
+        grid-template-columns: repeat(2, 1fr);
+        width: 90%;
+        gap: 25px;
+    }
+
+    .skill-icon {
+        font-size: 45px;
+    }
+}
+
+/* -----------------------
+   MOBILE (≤ 600px)
+------------------------ */
+@media (max-width: 600px) {
+
+    .about-main {
+        padding: 40px 0;
+    }
+
+    .about-head h1 {
+        font-size: 28px;
+    }
+
+    .about-icon .profile {
+        font-size: 60px;
+    }
+
+    .about-content p {
+        width: 92%;
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+    .Resume {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+
+    .btn-icon {
+        font-size: 16px;
+    }
+
+    .skill-head {
+        flex-direction: column;
+        gap: 6px;
+    }
+
+    .skill-head h1 {
+        font-size: 26px;
+    }
+
+    .skill-head .tool-icon {
+        font-size: 30px;
+    }
+
+    /* 🔥 IMPORTANT: 1 column on mobile */
+    .skill-grid {
+        grid-template-columns: 1fr;
+        width: 92%;
+        gap: 20px;
+    }
+
+    .skill-box {
+        padding: 20px;
+    }
+
+    .skill-icon {
+        font-size: 40px;
+    }
+
+    .progress-bar {
+        width: 90%;
+    }
+}

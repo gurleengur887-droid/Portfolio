@@ -9,10 +9,10 @@ const Home = () => {
         <div className="home-main">
             <div className="home-head">
                 <h1>Gurleen Kaur</h1>
-                <h3>Front End Developer</h3>
+                <h3>Full Stack Developer</h3>
             </div>
             <div className="home-para">
-                <p>I’m a dedicated Front-End Developer who loves turning ideas into visually appealing and responsive web interfaces. I specialize in creating clean, modern designs using HTML, CSS, and JavaScript, along with frameworks like React. My focus is on delivering smooth user experiences, optimizing performance, and writing maintainable code. I enjoy translating concepts into interactive digital experiences and continuously learning new tools to stay updated with the latest front-end trends.</p>
+                <p>Detail-oriented Full Stack Developer skilled in building responsive, user-focused web applications using modern technologies like HTML, CSS, JavaScript, React.js, and Node.js. Strong ability to transform ideas into scalable digital solutions with clean UI/UX and optimized performance. Passionate about creating real-world impactful products and continuously improving development skills.</p>
             </div>
             <div className="home-icons">
              <a

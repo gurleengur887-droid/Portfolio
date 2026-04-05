@@ -45,8 +45,8 @@
 ------------------------ */
 .project-content {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
-    gap: 35px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
     width: 85%;
     margin: auto;
 }
@@ -58,7 +58,7 @@
     background: rgba(255, 255, 255, 0.25);
     backdrop-filter: blur(12px);
     border-radius: 20px;
-    padding: 30px;
+    padding: 28px;
     text-align: left;
     border: 1px solid rgba(255, 255, 255, 0.35);
     transition: 0.35s ease;
@@ -164,4 +164,108 @@
 .project-github-btn {
     margin-top: auto;
     align-self: center;
+}
+.project-container {
+    animation: fadeUp 0.6s ease forwards;
+    opacity: 0;
+}
+
+@keyframes fadeUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+
+.project-container.featured {
+    grid-column: 1 / -1;   /* take full row */
+    max-width: 700px;      /* control width */
+    margin: 0 auto;        /* CENTER it */
+}
+
+/* -----------------------
+   TABLET (≤ 900px)
+------------------------ */
+@media (max-width: 900px) {
+    .project-content {
+        grid-template-columns: repeat(2, 1fr);
+        width: 90%;
+    }
+
+    .project-head h1 {
+        font-size: 38px;
+    }
+
+    .project-container h2 {
+        font-size: 22px;
+    }
+
+    .project-container p {
+        font-size: 15px;
+    }
+
+    .project-container.featured {
+        max-width: 90%;
+    }
+}
+
+/* -----------------------
+   MOBILE (≤ 600px)
+------------------------ */
+@media (max-width: 600px) {
+    .project-content {
+        grid-template-columns: 1fr;
+        width: 92%;
+        gap: 20px;
+    }
+
+    .project-main {
+        padding: 40px 0;
+    }
+
+    .project-head {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .project-head h1 {
+        font-size: 30px;
+    }
+
+    .globe {
+        font-size: 40px;
+    }
+
+    .project-container {
+        padding: 22px;
+    }
+
+    .project-container h2 {
+        font-size: 20px;
+    }
+
+    .project-container p {
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+    .project-container li {
+        font-size: 14px;
+    }
+
+    .project-github-btn {
+        font-size: 13px;
+        padding: 8px 16px;
+    }
+
+    /* Featured card adjustment */
+    .project-container.featured {
+        grid-column: auto;
+        max-width: 100%;
+    }
 }

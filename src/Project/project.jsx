@@ -89,8 +89,34 @@ const Project = () => {
             <FaGithub /> GitHub Repo
           </button>
         </div>
+        {/* Vaidyaco.in */}
+        <div className="project-container featured">
 
-      </div>
+  <h2>Vaidyaco.in</h2>
+  <p>
+    A modern healthcare-focused website designed to provide seamless user
+    experience and accessibility for medical services.
+  </p>
+  <ul>
+    <li>Built with <b>React.js</b></li>
+    <li>Clean UI with intuitive navigation</li>
+    <li>Optimized for performance and responsiveness</li>
+  </ul>
+
+  <button
+    className="project-github-btn"
+    onClick={() =>
+      window.open(
+        "https://github.com/gurleengur887-droid/Vaidya-frontend",
+        "_blank"
+      )
+    }
+  >
+    <FaGithub /> GitHub Repo
+  </button>
+</div>
+</div>
+      
     </div>
   );
 };
